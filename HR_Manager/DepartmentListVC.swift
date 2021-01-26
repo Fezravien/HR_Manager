@@ -35,4 +35,25 @@ class DepartmentListVC: UITableViewController {
         self.tableView.allowsSelectionDuringEditing = true
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.departList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // indexPath 매개변수가 가리키는 행에 대한 데이터를 읽어온다.
+        let rowData = self.departList[indexPath.row]
+        
+        // 셀 객체를 생성하고 데이터를 배치한다.
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DEPART_CELL")
+        
+        cell?.textLabel?.text = rowData.departTitle
+        cell?.textLabel?.font = UIFont.systemFont(ofSize: 15)
+        
+        cell?.detailTextLabel?.text = rowData.departAddr
+        cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 13)
+        
+        return cell!
+    }
+    
 }
