@@ -17,7 +17,7 @@ class DepartmentListVC: UITableViewController {
         self.initUI()
     }
     
-    // UI 초기화 함수
+    // MARK: - UI 초기화
     func initUI() {
         
         // 내비게이션 타이틀용 레이블 속성 설정
@@ -35,6 +35,7 @@ class DepartmentListVC: UITableViewController {
         self.tableView.allowsSelectionDuringEditing = true
     }
     
+    // MARK: - tableView delegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.departList.count
     }
@@ -56,4 +57,34 @@ class DepartmentListVC: UITableViewController {
         return cell!
     }
     
+    // MARK: - 사원 등록
+    @IBAction func add(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "신규 부서 등록", message: "신규 부서를 등록해 주세요", preferredStyle: .alert)
+        
+        // 부서명 및 주소 입력용 덱스트 필드 추가
+        alert.addTextField { $0.placeholder = "부서명"}
+        alert.addTextField { $0.placeholder = "주소"}
+        
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel))
+        alert.addAction(UIAlertAction(title: "확인", style: .default) { _ in // 확인 버튼
+            
+            let title = alert.textFields?[0].text // 부서명
+            let addr = alert.textFields?[1].text // 부서 주소
+            
+            if self.departDAO.create(title!, addr!) {
+                
+                // 신규 부서가 등록되면 DB에서 목록을 다시 읽어온 후, 테이블을 갱신해 준다.
+                self.departList = self.departDAO.find()
+                self.tableView.reloadData()
+                
+                // 내비게이션 타이틀에도 변경된 부서 정보를 반영한다.
+                let navTitle = self.navigationItem.titleView as! UILabel
+                navTitle.text = "부서 목록 \n" + " 총 \(self.departList.count) 개"
+            }
+        })
+        
+        self.present(alert, animated: false)
+        
+    }
 }

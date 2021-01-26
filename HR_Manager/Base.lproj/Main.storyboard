@@ -101,7 +101,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mQi-99-VUr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fhj-Rc-F5z"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fhj-Rc-F5z">
+                            <connections>
+                                <action selector="add:" destination="sfh-O1-Ofb" id="2cQ-r3-kxV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBH-nw-gpM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
