@@ -64,7 +64,7 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="nwa-Qv-DPg" detailTextLabel="L3i-4j-WXc" style="IBUITableViewCellStyleSubtitle" id="3A1-Us-y2c">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EMP_CELL" textLabel="nwa-Qv-DPg" detailTextLabel="L3i-4j-WXc" style="IBUITableViewCellStyleSubtitle" id="3A1-Us-y2c">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3A1-Us-y2c" id="Ron-bc-ZM5">

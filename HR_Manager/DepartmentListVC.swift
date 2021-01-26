@@ -12,6 +12,8 @@ class DepartmentListVC: UITableViewController {
     var departList: [(departCd: Int, departTitle: String, departAddr: String)]! // 데이터 소스용 맴버 변수
     let departDAO = DepartmentDAO() // SQLite 처리를 담당할 DAO 객체
     
+    
+    // MARK: - View cycle
     override func viewDidLoad() {
         self.departList = self.departDAO.find() // 기존 저장된 부서 정보를 가져온다.
         self.initUI()
