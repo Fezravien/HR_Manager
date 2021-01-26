@@ -41,7 +41,18 @@
                             <constraint firstItem="pcj-X5-KKr" firstAttribute="bottom" secondItem="JBr-w4-pdn" secondAttribute="bottom" id="Pen-OE-Zhq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jNR-bq-Upb"/>
+                    <navigationItem key="navigationItem" id="jNR-bq-Upb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="l5m-Av-n0B">
+                            <connections>
+                                <action selector="editing:" destination="MN8-30-iBH" id="B2e-F9-uf0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nnC-wv-SaX">
+                            <connections>
+                                <action selector="add:" destination="MN8-30-iBH" id="fh4-4X-Jnm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJV-WU-Frv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
