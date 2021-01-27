@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BA3E211325BD3C2E009EAB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E211225BD3C2E009EAB78 /* AppDelegate.swift */; };
 		BA3E211525BD3C2E009EAB78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E211425BD3C2E009EAB78 /* SceneDelegate.swift */; };
-		BA3E211725BD3C2E009EAB78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E211625BD3C2E009EAB78 /* ViewController.swift */; };
 		BA3E211A25BD3C2E009EAB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3E211825BD3C2E009EAB78 /* Main.storyboard */; };
 		BA3E211C25BD3C2F009EAB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA3E211B25BD3C2F009EAB78 /* Assets.xcassets */; };
 		BA3E211F25BD3C2F009EAB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA3E211D25BD3C2F009EAB78 /* LaunchScreen.storyboard */; };
@@ -25,13 +24,13 @@
 		BA3E214B25BD595F009EAB78 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E214A25BD595F009EAB78 /* DepartmentDAO.swift */; };
 		BA3E214E25BDA7E4009EAB78 /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E214D25BDA7E4009EAB78 /* EmployeeDAO.swift */; };
 		BA3E218825C04DCC009EAB78 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E218725C04DCC009EAB78 /* PickerController.swift */; };
+		BA3E218E25C124B4009EAB78 /* DepartmentInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E218D25C124B4009EAB78 /* DepartmentInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BA3E210F25BD3C2E009EAB78 /* HR_Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HR_Manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3E211225BD3C2E009EAB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA3E211425BD3C2E009EAB78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BA3E211625BD3C2E009EAB78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BA3E211925BD3C2E009EAB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA3E211B25BD3C2F009EAB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA3E211E25BD3C2F009EAB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		BA3E214A25BD595F009EAB78 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
 		BA3E214D25BDA7E4009EAB78 /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
 		BA3E218725C04DCC009EAB78 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
+		BA3E218D25C124B4009EAB78 /* DepartmentInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,19 +90,19 @@
 		BA3E211125BD3C2E009EAB78 /* HR_Manager */ = {
 			isa = PBXGroup;
 			children = (
+				BA3E211B25BD3C2F009EAB78 /* Assets.xcassets */,
+				BA3E211825BD3C2E009EAB78 /* Main.storyboard */,
+				BA3E211D25BD3C2F009EAB78 /* LaunchScreen.storyboard */,
 				BA3E211225BD3C2E009EAB78 /* AppDelegate.swift */,
 				BA3E211425BD3C2E009EAB78 /* SceneDelegate.swift */,
-				BA3E211625BD3C2E009EAB78 /* ViewController.swift */,
-				BA3E211825BD3C2E009EAB78 /* Main.storyboard */,
 				BA3E214125BD4166009EAB78 /* DepartmentListVC.swift */,
+				BA3E218D25C124B4009EAB78 /* DepartmentInfoVC.swift */,
 				BA3E214425BD419F009EAB78 /* EmployeeListVC.swift */,
 				BA3E218725C04DCC009EAB78 /* PickerController.swift */,
-				BA3E211B25BD3C2F009EAB78 /* Assets.xcassets */,
-				BA3E211D25BD3C2F009EAB78 /* LaunchScreen.storyboard */,
+				BA3E214D25BDA7E4009EAB78 /* EmployeeDAO.swift */,
+				BA3E214A25BD595F009EAB78 /* DepartmentDAO.swift */,
 				BA3E212025BD3C2F009EAB78 /* Info.plist */,
 				BA3E214725BD53FB009EAB78 /* hr.sqlite */,
-				BA3E214A25BD595F009EAB78 /* DepartmentDAO.swift */,
-				BA3E214D25BDA7E4009EAB78 /* EmployeeDAO.swift */,
 			);
 			path = HR_Manager;
 			sourceTree = "<group>";
@@ -207,9 +207,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3E214E25BDA7E4009EAB78 /* EmployeeDAO.swift in Sources */,
-				BA3E211725BD3C2E009EAB78 /* ViewController.swift in Sources */,
 				BA3E218825C04DCC009EAB78 /* PickerController.swift in Sources */,
 				BA3E214225BD4166009EAB78 /* DepartmentListVC.swift in Sources */,
+				BA3E218E25C124B4009EAB78 /* DepartmentInfoVC.swift in Sources */,
 				BA3E214B25BD595F009EAB78 /* DepartmentDAO.swift in Sources */,
 				BA3E214525BD419F009EAB78 /* EmployeeListVC.swift in Sources */,
 				BA3E211325BD3C2E009EAB78 /* AppDelegate.swift in Sources */,
