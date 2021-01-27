@@ -130,7 +130,27 @@ class DepartmentInfoVC: UITableViewController {
             
             cell?.contentView.addSubview(state)
             
+            state.tag = row.empCd // 액션 메소드에서 참조할 수 있도록 사원 코드를 저장
+            state.addTarget(self, action: #selector(self.changeState(_:)), for: .valueChanged)
+            
             return cell!
+        }
+    }
+    
+    @objc func changeState(_ sender: UISegmentedControl) {
+        
+        // 사원 코드
+        let empCd = sender.tag
+        
+        // 재직 상태
+        let stateCd = EmpStateType(rawValue: sender.selectedSegmentIndex)
+        
+        // 재직 상태 업데이트
+        if self.empDAO.editState(empCd, stateCd!) {
+            let alert = UIAlertController(title: nil, message: "재직 상태가 변경되었습니다.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .cancel))
+            
+            present(alert, animated: false)
         }
     }
 }

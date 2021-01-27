@@ -23,7 +23,7 @@
 		BA3E214825BD53FB009EAB78 /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = BA3E214725BD53FB009EAB78 /* hr.sqlite */; };
 		BA3E214B25BD595F009EAB78 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E214A25BD595F009EAB78 /* DepartmentDAO.swift */; };
 		BA3E214E25BDA7E4009EAB78 /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E214D25BDA7E4009EAB78 /* EmployeeDAO.swift */; };
-		BA3E218825C04DCC009EAB78 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E218725C04DCC009EAB78 /* PickerController.swift */; };
+		BA3E218825C04DCC009EAB78 /* DepartPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E218725C04DCC009EAB78 /* DepartPickerVC.swift */; };
 		BA3E218E25C124B4009EAB78 /* DepartmentInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E218D25C124B4009EAB78 /* DepartmentInfoVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		BA3E214725BD53FB009EAB78 /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = hr.sqlite; path = ../../hr.sqlite; sourceTree = "<group>"; };
 		BA3E214A25BD595F009EAB78 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
 		BA3E214D25BDA7E4009EAB78 /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
-		BA3E218725C04DCC009EAB78 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
+		BA3E218725C04DCC009EAB78 /* DepartPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartPickerVC.swift; sourceTree = "<group>"; };
 		BA3E218D25C124B4009EAB78 /* DepartmentInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,11 +98,12 @@
 				BA3E214125BD4166009EAB78 /* DepartmentListVC.swift */,
 				BA3E218D25C124B4009EAB78 /* DepartmentInfoVC.swift */,
 				BA3E214425BD419F009EAB78 /* EmployeeListVC.swift */,
-				BA3E218725C04DCC009EAB78 /* PickerController.swift */,
+				BA3E218725C04DCC009EAB78 /* DepartPickerVC.swift */,
 				BA3E214D25BDA7E4009EAB78 /* EmployeeDAO.swift */,
 				BA3E214A25BD595F009EAB78 /* DepartmentDAO.swift */,
 				BA3E212025BD3C2F009EAB78 /* Info.plist */,
 				BA3E214725BD53FB009EAB78 /* hr.sqlite */,
+				BA3E212825BD3CFD009EAB78 /* HR_Manager-Bridging-Header.h */,
 			);
 			path = HR_Manager;
 			sourceTree = "<group>";
@@ -121,7 +122,6 @@
 				BA3E213225BD3CFF009EAB78 /* FMDB.h */,
 				BA3E212D25BD3CFE009EAB78 /* FMResultSet.h */,
 				BA3E213125BD3CFF009EAB78 /* FMResultSet.m */,
-				BA3E212825BD3CFD009EAB78 /* HR_Manager-Bridging-Header.h */,
 			);
 			path = fmdb;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3E214E25BDA7E4009EAB78 /* EmployeeDAO.swift in Sources */,
-				BA3E218825C04DCC009EAB78 /* PickerController.swift in Sources */,
+				BA3E218825C04DCC009EAB78 /* DepartPickerVC.swift in Sources */,
 				BA3E214225BD4166009EAB78 /* DepartmentListVC.swift in Sources */,
 				BA3E218E25C124B4009EAB78 /* DepartmentInfoVC.swift in Sources */,
 				BA3E214B25BD595F009EAB78 /* DepartmentDAO.swift in Sources */,
@@ -374,7 +374,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pazravine.HR-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "fmdb/HR_Manager-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "HR_Manager/HR_Manager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -395,7 +395,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pazravine.HR-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "fmdb/HR_Manager-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "HR_Manager/HR_Manager-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

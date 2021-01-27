@@ -41,14 +41,6 @@ struct EmployeeVO {
 // 프로퍼티에 저장
 class EmployeeDAO {
     
-    init() {
-        self.fmdb.open()
-    }
-    
-    deinit {
-        self.fmdb.close()
-    }
-    
     //FMDatabase 객체 생성 및 초기화
     lazy var fmdb: FMDatabase! = {
         
@@ -71,6 +63,15 @@ class EmployeeDAO {
         return db
     }()
     
+    init() {
+        self.fmdb.open()
+    }
+    
+    deinit {
+        self.fmdb.close()
+    }
+    
+    
     
     // MARK: - 사원 목록 가져오기 find()
     // 기본값 0 지정
@@ -85,12 +86,12 @@ class EmployeeDAO {
             let condition = departCd == 0 ? "" : "WHERE Employee.depart_cd = \(departCd)"
             
             let sql = """
-                SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
-                FROM employee
-                JOIN department ON departmet.depart_cd = employee.depart_cd
-                \(condition)
-                ORDER BY employee.depart_cd ASC
-            """
+SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
+FROM employee
+JOIN department On department.depart_cd = employee.depart_cd
+\(condition)
+ORDER BY employee.depart_cd ASC
+"""
             
             let rs = try self.fmdb.executeQuery(sql, values: nil)
             
@@ -109,7 +110,7 @@ class EmployeeDAO {
                 employeeList.append(record)
                 
             }
-        } catch {
+        } catch let error as NSError{
             print("failed: \(error.localizedDescription)")
         }
         
@@ -121,11 +122,11 @@ class EmployeeDAO {
         
         // 질의 실행
         let sql = """
-            SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
-            FROM employee
-            JOIN department ON department.depart_cd = employee.depart_cd
-            WHERE emp_cd = ?
-        """
+SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
+FROM employee
+JOIN department On department.depart_cd = employee.depart_cd
+WHERE emp_cd = ?
+"""
         
         let rs = self.fmdb.executeQuery(sql, withArgumentsIn: [empCd])
         
@@ -154,9 +155,9 @@ class EmployeeDAO {
         
         do {
             let sql = """
-                INSERT INTO employee (emp_name, join_date, state_cd, depart_cd)
-                VALUES (?, ?, ?, ?)
-            """
+INSERT INTO employee (emp_name, join_date, state_cd, depart_cd)
+VALUES ( ? , ? , ? , ? )
+"""
             
             // Prepared Statement를 위한 인자값
             var params: [Any] = []
@@ -165,7 +166,7 @@ class EmployeeDAO {
             params.append(param.stateCd.rawValue)
             params.append(param.departCd)
             
-            try self.fmdb.executeQuery(sql, values: params)
+            try self.fmdb.executeUpdate(sql, values: params)
             
             return true
             
@@ -174,6 +175,25 @@ class EmployeeDAO {
             
             return false
         }
+        
+//        do {
+//            let sql = """
+//INSERT INTO employee (emp_name, join_date, state_cd, depart_cd)
+//VALUES ( ? , ? , ? , ? )
+//"""
+//            // Prepared Statement를 위한 인자값
+//            var params = [Any]()
+//            params.append(param.empName)
+//            params.append(param.joinDate)
+//            params.append(param.stateCd.rawValue)
+//            params.append(param.departCd)
+//
+//            try self.fmdb.executeUpdate(sql, values: params)
+//            return true
+//        } catch let error as NSError {
+//            print("Insert Error : \(error.localizedDescription)")
+//            return false
+//        }
         
     }
     
@@ -192,7 +212,32 @@ class EmployeeDAO {
             return false
         }
     }
+    
+    // MARK: - 재직 상태 변경하기
+    func editState(_ empCd: Int, _ stateCd: EmpStateType) -> Bool {
+        
+        do {
+            let sql = " UPDATE Employee SET state_cd = ? WHERE emp_cd = ? "
+            
+            // 인자값 배열
+            var params:[Any] = []
+            params.append(stateCd.rawValue) // 재직 상태 코드 0, 1, 2
+            params.append(empCd) // 사원 코드
+            
+            // 업데이트 실행
+            try self.fmdb.executeUpdate(sql, values: params)
+            
+            return true
+            
+        } catch let error as NSError {
+            print("UPDATE Error : \(error.localizedDescription)")
+            
+            return false
+        }
+    }
 
 }
+
+
 
 
