@@ -24,6 +24,7 @@
 		BA3E214825BD53FB009EAB78 /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = BA3E214725BD53FB009EAB78 /* hr.sqlite */; };
 		BA3E214B25BD595F009EAB78 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E214A25BD595F009EAB78 /* DepartmentDAO.swift */; };
 		BA3E214E25BDA7E4009EAB78 /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E214D25BDA7E4009EAB78 /* EmployeeDAO.swift */; };
+		BA3E218825C04DCC009EAB78 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E218725C04DCC009EAB78 /* PickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		BA3E214725BD53FB009EAB78 /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = hr.sqlite; path = ../../hr.sqlite; sourceTree = "<group>"; };
 		BA3E214A25BD595F009EAB78 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
 		BA3E214D25BDA7E4009EAB78 /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
+		BA3E218725C04DCC009EAB78 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				BA3E211825BD3C2E009EAB78 /* Main.storyboard */,
 				BA3E214125BD4166009EAB78 /* DepartmentListVC.swift */,
 				BA3E214425BD419F009EAB78 /* EmployeeListVC.swift */,
+				BA3E218725C04DCC009EAB78 /* PickerController.swift */,
 				BA3E211B25BD3C2F009EAB78 /* Assets.xcassets */,
 				BA3E211D25BD3C2F009EAB78 /* LaunchScreen.storyboard */,
 				BA3E212025BD3C2F009EAB78 /* Info.plist */,
@@ -205,6 +208,7 @@
 			files = (
 				BA3E214E25BDA7E4009EAB78 /* EmployeeDAO.swift in Sources */,
 				BA3E211725BD3C2E009EAB78 /* ViewController.swift in Sources */,
+				BA3E218825C04DCC009EAB78 /* PickerController.swift in Sources */,
 				BA3E214225BD4166009EAB78 /* DepartmentListVC.swift in Sources */,
 				BA3E214B25BD595F009EAB78 /* DepartmentDAO.swift in Sources */,
 				BA3E214525BD419F009EAB78 /* EmployeeListVC.swift in Sources */,

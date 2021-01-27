@@ -41,7 +41,18 @@
                             <constraint firstItem="pcj-X5-KKr" firstAttribute="bottom" secondItem="JBr-w4-pdn" secondAttribute="bottom" id="Pen-OE-Zhq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jNR-bq-Upb"/>
+                    <navigationItem key="navigationItem" id="jNR-bq-Upb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="l5m-Av-n0B">
+                            <connections>
+                                <action selector="editing:" destination="MN8-30-iBH" id="B2e-F9-uf0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nnC-wv-SaX">
+                            <connections>
+                                <action selector="add:" destination="MN8-30-iBH" id="fh4-4X-Jnm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJV-WU-Frv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,7 +75,7 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="nwa-Qv-DPg" detailTextLabel="L3i-4j-WXc" style="IBUITableViewCellStyleSubtitle" id="3A1-Us-y2c">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EMP_CELL" textLabel="nwa-Qv-DPg" detailTextLabel="L3i-4j-WXc" style="IBUITableViewCellStyleSubtitle" id="3A1-Us-y2c">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3A1-Us-y2c" id="Ron-bc-ZM5">
@@ -101,7 +112,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mQi-99-VUr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fhj-Rc-F5z"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fhj-Rc-F5z">
+                            <connections>
+                                <action selector="add:" destination="sfh-O1-Ofb" id="2cQ-r3-kxV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBH-nw-gpM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
