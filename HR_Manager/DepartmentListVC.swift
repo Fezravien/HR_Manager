@@ -60,6 +60,10 @@ class DepartmentListVC: UITableViewController {
     }
     
     // 편집
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.delete
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)  {
         
         // 삭제할 행의 departCd를 구한다.
@@ -72,9 +76,24 @@ class DepartmentListVC: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 화면 이동 시 함께 전달할 부서 코드
+        let departCd = self.departList[indexPath.row].departCd
+        
+        // 이동할 대상 뷰 컨트롤러의 인스턴스
+        let infoVC = self.storyboard?.instantiateViewController(withIdentifier: "DEPART_INFO")
+        
+        if let _infoVC = infoVC as? DepartmentInfoVC {
+            
+            // 부서 코드를 전달한 다음, 푸시 방식으로 화면 이동
+            _infoVC.departCd = departCd
+            self.navigationController?.pushViewController(_infoVC, animated: true)
+        }
+    }
+    
     // MARK: - 사원 등록
     @IBAction func add(_ sender: Any) {
-        
         let alert = UIAlertController(title: "신규 부서 등록", message: "신규 부서를 등록해 주세요", preferredStyle: .alert)
         
         // 부서명 및 주소 입력용 덱스트 필드 추가
@@ -100,6 +119,5 @@ class DepartmentListVC: UITableViewController {
         })
         
         self.present(alert, animated: false)
-        
     }
 }
