@@ -150,7 +150,7 @@ class DepartmentInfoVC: UITableViewController {
             let alert = UIAlertController(title: nil, message: "재직 상태가 변경되었습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .cancel))
             
-            present(alert, animated: false)
+            self.present(alert, animated: false)
         }
     }
 }
